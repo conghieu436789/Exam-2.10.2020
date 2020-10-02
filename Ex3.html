@@ -1,0 +1,29 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+    let number =+prompt('nhap number');
+    if (number<0) {
+        number= +prompt('nhap number');
+    }
+    let firstNumber=0;
+    let secondNumber=1;
+    let nextNumber;
+    console.log(isFibonacci(number));
+    function isFibonacci(number){
+        if (number === 0 || number === 1) {
+            return true;
+        }
+        let fiboArr=[];
+        fiboArr.push(firstNumber,secondNumber);
+        nextNumber=firstNumber+secondNumber;
+        while (nextNumber<=number) {
+            fiboArr.push(nextNumber);
+            nextNumber+=fiboArr[fiboArr.length-2];
+        }
+        return fiboArr[fiboArr.length-1]=== number;
+    }
+</script>
+</body>
+</html>
